@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+		
+		<style>
+			
+			html {
+				scroll-behavior: smooth;
+			}
+			
+			html, body {
+			  height: 100%;
+				margin: 0; 
+			  padding: 0;
+				overflow-x: hidden;
+			}
+			
+			body {
+			  font-family:
+			    system-ui,
+			    sans-serif;
+					/*
+				background: linear-gradient(
+			    90deg,
+					#72b0c0,
+					#61a5b8,
+					#8fb1bc,
+					#9fc6c4,
+					#8fb1bc,
+					#61a5b8,
+					#72b0c0
+				);/**/
+					/*
+				background: linear-gradient(
+			    90deg,
+					#6ab,
+					#59a,
+					#8aa,
+					#9bb,
+					#8aa,
+					#59a,
+					#6ab
+				);/**/
+				/*	
+				background: linear-gradient(
+			    90deg,
+					#59a,
+					#489,
+					#799,
+					#8aa,
+					#799,
+					#489,
+					#59a
+				);/**/
+				background: #b8cce0;/*#4eb1b1;#95d0d0;*/
+				color: #113;
+				
+				
+			}
+			
+			.main-title {
+				
+				font-weight: 700;
+				color: #286da8;
+				padding: 20px;
+				text-align: center;
+				text-shadow:
+				    1px 1px 1px #fff,
+				   -1px 1px 1px #fff,
+				    1px -1px 1px #fff,
+				   -1px -1px 1px #fff;
+				
+				
+				font-size: 2.5rem;
+				
+			}
+			
+			.quote-container {
+				display: flex;
+				justify-content: center;
+			}
+			
+			.quote {
+				
+				font-weight: 700;
+				color: #fff;
+				padding: 20px;
+				text-align: center;
+				text-shadow:
+				    1px 1px 1px #286da8,
+				   -1px 1px 1px #286da8,
+				    1px -1px 1px #286da8,
+				   -1px -1px 1px #286da8;
+				
+			}
+			
+			.setup {
+				display: flex;
+				justify-content: left;
+				font-weight: 400;
+				color: #000;
+				padding: 50px;
+				text-align: center;
+				font-size: 1.5rem;
+			}
+			
+			.setup2 {
+				font-weight: 400;
+				color: #000;
+				padding: 50px;
+				text-align: left;
+				font-size: 1.5rem;
+				letter-spacing: 0.01em;
+				margin: auto;
+			}
+			
+			.setup2 .m {
+				font-size: 1.2rem;
+			}
+			.setup2 .e {
+				font-size: 1.2rem;
+			}
+			.setup2 .l {
+				font-size: 1.2rem;
+			}
+			.setup2 .n {
+				font-size: 1.2rem;
+			}
+			.setup2 .nl {
+				font-size: 1.2rem;
+			}
+			.setup2 .em {
+				font-size: 1.2rem;
+			}
+			
+			a {
+				color: #000;
+				text-decoration-color: rgba(100,100,100,0.4);
+				text-decoration-thickness: 0.1px;
+			}
+			
+			a:hover {
+				color: #286da8;
+			}
+			
+			/*
+			.timeline-flowchart .mermaid {
+			  width: 100%;
+				display: flex; 
+				justify-content: center;
+			}*/
+			
+			h1 {
+				display: flex;
+				justify-content: center;
+			}
+			
+			.timeline {
+				
+		    position: relative;
+				
+				/*
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+				/**/
+				
+				
+			  width: 100%;
+			  max-width: 800px;
+			  margin: 40px auto;
+				padding: 40px 0;
+				/*background: #286da8;/**/
+		  }
+			
+			.timeline-mort {
+				
+		    position: relative;
+				
+				/*
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+				/**/
+				
+				
+			  width: 100%;
+			  max-width: 800px;
+			  margin: 40px auto;
+				padding: 40px 0;
+				/*background: #286da8;/**/
+		  }
+			
+			.timeline-title-groupchat {
+				font-weight: 600;
+				color: #799;
+				padding-top: 40px;
+				margin-bottom: -20px;
+				text-align: center;
+			}
+			
+			.timeline-title-privatechat-EL {
+				font-weight: 600;
+				color: #242;
+				padding-top: 40px;
+				margin-bottom: -20px;
+				text-align: center;
+			}
+			
+			.timeline-title-EL {
+				font-weight: 600;
+				color: #396;
+				padding-top: 40px;
+				margin-bottom: -50px;
+				text-align: center;
+			}
+			
+			.timeline-title-MN {
+				font-weight: 600;
+				color: #fce; /* #fce, #c9f,*/
+				padding-top: 40px;
+				margin-bottom: -50px;
+				text-align: center;
+			}
+			
+			
+			.timeline-private {
+				
+		    position: relative;
+			  width: 100%;
+			  max-width: 800px;
+			  margin: 40px auto;
+				padding: 40px 0;
+				/*background: #286da8;/**/
+		  }
+			
+			.timeline-private-mn {
+				
+		    position: relative;
+			  width: 100%;
+			  max-width: 800px;
+			  margin: 40px auto;
+				padding: 40px 0;
+				/*background: #286da8;/**/
+		  }
+			
+
+		  /* Vertical line behind nodes */
+		  .timeline::before {
+		    content: '';
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+				left: 50%;
+		    width: 10px;
+				border-radius: 8px;
+				transform: translateX(-50%);
+		    /*background: #286da8;/**/
+				background: linear-gradient(
+			    180deg,
+					
+					#9bb,
+					#286da8,
+					#9bb
+					
+					
+				);
+		    
+		    /*z-index: -1;/**/
+		  }
+			
+		  /* Vertical line behind nodes */
+		  .timeline-mort::before {
+		    content: '';
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+				left: 50%;
+		    width: 10px;
+				border-radius: 8px;
+				transform: translateX(-50%);
+		    /*background: #286da8;/**/
+				background: #555;
+		    
+		    /*z-index: -1;/**/
+		  }
+			
+		  
+			
+		  .timeline-private::before {
+		    content: '';
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+				left: 50%;
+		    width: 10px;
+				border-radius: 8px;
+				transform: translateX(-50%);
+		    /*background: #286da8;/**/
+				background: linear-gradient(
+			    180deg,
+					
+					#396,
+					#333,
+					#396,
+					#333
+					
+					
+				);
+		    
+		    /*z-index: -1;/**/
+		  }
+			
+			
+		  .timeline-private-mn::before {
+		    content: '';
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+				left: 50%;
+		    width: 10px;
+				border-radius: 8px;
+				transform: translateX(-50%);
+		    /*background: #286da8;/**/
+				background: linear-gradient(
+			    180deg,
+					
+					#fce,
+					#c9f,
+					#fce,
+					#c9f
+					
+					
+				);
+		    
+		    /*z-index: -1;/**/
+		  }
+
+		  .node {
+		    position: relative;
+				left: 50%;
+		    
+				width: 300px;/**/
+		    padding: 1rem 2rem;
+		    margin: 2rem 0;
+		    /*background: #dde; /**/
+				background: #bbc;
+		    border: 2px solid #286da8;
+		    border-radius: 8px;
+				box-shadow: 0 5px 6px rgba(0,0,0,0.55);
+		    /*z-index: 1;/**/
+				
+		    max-width: 500px;
+		    text-align: left;
+		  }
+			/*
+			 e 396
+			l 333
+			n c9f
+			m fce
+			*/
+			
+			.node.bge {
+				border: 4px solid #396;
+			}
+			
+			.node.bgm {
+				border: 4px solid #fce;
+			}
+			
+			.node.bgn {
+				border: 4px solid #939;/*#c9f;*/
+			}
+			
+			.thefinalclosure.bgn {
+				border: 4px solid #939;/*#c9f;*/
+			}
+			
+			.thefinalclosure.bgl {
+				border: 4px solid #333;
+			}
+			
+			.thefinalclosure.bge {
+				border: 4px solid #396;
+			}
+			
+			.node.bgl {
+				border: 4px solid #333;
+			}
+			
+			.node.bgs {
+				border: 4px solid #fff;
+			}
+			
+			
+			
+		  .node.no-msg {
+				background: linear-gradient(
+			    90deg,
+			    
+					#72b0c0,
+					#61a5b8,
+					#8fb1bc,
+					#9fc6c4,
+					#8fb1bc,
+					#61a5b8,
+					#72b0c0
+						
+				);
+				max-width: 100% !important;
+				width: 80% !important;
+				box-shadow: none;
+				/*z-index: 0;/**/
+				position: relative;
+		  }
+			
+		  .node.no-msg::before {
+				content: "";
+			  position: absolute;
+			  left: 50%;
+			  top: -12px;
+			  bottom: -12px;
+			  width: 6px;              /* wider than line */
+			  background: var(--page-bg);/**/
+			  transform: translateX(-50%);
+			  /*z-index: 0;/**/
+		  }
+			
+			/*.node.no-msg::before  {
+				background: #f86da8;
+			}/**/
+
+		  /* Optional tooltip */
+		  .tooltip {
+		    position: relative;
+				/*display: inline-block;/**/
+		    cursor: pointer;
+				text-decoration: underline dotted;
+				text-decoration-color: rgba(200,100,100,0.4);
+				text-decoration-thickness: 0.1px;
+		  }
+			
+			.tooltip-fancy {
+			  position: relative;/**/
+				display: inline;/**/
+				color: #559;
+			  cursor: pointer;
+				text-decoration: underline dotted;
+				text-decoration-color: rgba(100,100,100,0.4);
+				text-decoration-thickness: 1px;
+				/*z-index: 2;/**/
+			}
+			
+			
+			
+			.tooltip-box {
+				opacity: 0;
+				pointer-events: none;
+				position: absolute;/**/
+				/*position: fixed;/**/
+				/*position: relative;/**/
+				bottom: 100%;/**/
+				margin-bottom: 8px;
+				/*right: 50%;/**/
+				left: 0;/**/
+				/*transform: translateX(-50%);/**/
+				
+				white-space: normal;
+				
+				
+				/*transform: translate(-50%, -70px);/**/
+				transition: opacity 0.0s;
+				/*z-index: 10;/**/
+			  background: #286da8;
+			  color: #fff;
+			  padding: 10px 10px;
+			  border-radius: 4px;
+				min-width: 50px;
+				/*max-width: 300px;/**/
+				max-width: min(90vw, 420px);
+				width: max-content;
+				box-sizing: border-box;
+				
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			.hover-reveal {
+				color: #559;
+			  cursor: pointer;
+				text-decoration: underline dotted;
+				text-decoration-color: rgba(100,100,100,0.4);
+				text-decoration-thickness: 1px;
+			}/**/
+			
+			/*
+			.hover-reveal-image {
+				position: fixed;
+			  max-width: 95vw;
+			  max-height: 95vh;
+			  z-index: 100000;
+			  pointer-events: none;
+			  display: none;
+				border: 3px solid #286da8;
+			}/**/
+			/*
+			.image-overlay {
+			  position: fixed;
+			  left: 50%;
+			  transform: translateX(-50%);
+			  display: none;
+			  z-index: 9999;
+			  pointer-events: none;
+				
+			}
+
+			.image-overlay img {
+			  max-width: 95vw;
+			  max-height: 70vh;
+			  object-fit: contain;
+				border: 3px solid #286da8;
+			}/**/
+			
+			.image-overlay {
+			  position: fixed;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			  display: none;
+			  z-index: 9999;
+			  pointer-events: none;
+			}
+
+			.image-overlay img {
+			  max-width: 95vw;
+			  max-height: 70vh;
+			  object-fit: contain;
+			  border: 3px solid #286da8;
+			}
+			
+			/*
+			.hover-reveal-image img {
+				max-width: 95vw;
+				max-height: 95vh;
+				object-fit: contain;
+				
+			}/**/
+			
+			.hover-reveal:hover {
+				color: #fff;
+			}
+			
+			
+			
+			
+			
+			
+			.tooltip-image {
+				opacity: 0;
+				pointer-events: none;
+				position: absolute;
+				bottom: 100%;
+				right: 50%;
+				white-space: normal;
+				transition: opacity 0.15s;
+				z-index: 999;
+			  background: #286da8;
+			  color: #fff;
+			  padding: 10px 10px;
+			  border-radius: 4px;
+				min-width: 300px;
+			}
+			
+			.tooltip-fancy:hover .tooltip-box.ponder {
+				background: #777;
+				color: #fff;
+				border: 1px solid #fff;
+				max-width: 500px;
+				transition: opacity 0.0s;
+			}
+			
+			.tooltip-fancy:hover .tooltip-box.concern {
+				background: #775;
+				color: #ffa;
+				border: 1px solid #ffa;
+				max-width: 350px;
+				transition: opacity 0.0s;
+			}
+			
+			.tooltip-fancy:hover .tooltip-box.red-flag {
+				background: #555;
+				color: #faa;
+				border: 1px solid #faa;
+				max-width: 500px;
+				transition: opacity 0.0s;
+			}
+			
+			/*
+			'dark yellow'
+				background: #555;
+				color: #ffa;
+			*/
+			
+			.tooltip-fancy:hover .tooltip-box {
+			  opacity: 1;
+			}
+			
+			.tooltip-fancy:hover .tooltip-image {
+			  opacity: 1;
+			}
+			
+			.tooltip-fancy:hover {
+				color: #fff; /*#286da8;*/
+			}
+			
+			
+			
+			
+
+		  .tooltip:hover::after {
+		    content: attr(data-tooltip);
+				
+		    position: absolute;
+		    bottom: 100%;
+		    left: 50%;
+		    transform: translateX(-50%);
+		    background: #000;
+		    color: #fff;
+		    padding: 0.3rem 0.5rem;
+		    border-radius: 4px;
+				
+ 			  max-width: 500px;
+ 			  white-space: normal;
+ 			  overflow-wrap: break-word;
+ 			  word-break: normal;
+		    
+				font-size: 0.8rem;
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity 0.2s;
+		    margin-bottom: 6px;
+		    z-index: -2;
+		  }
+			
+			.tooltip:hover::after {
+			  opacity: 1;
+ 			  
+			}
+			
+			.tooltip:hover {
+				color: #286da8;
+			}
+			
+			
+			
+			
+			
+				
+			/* Default / note */
+			.tooltip::after {
+			  background: #222;
+			  color: #fff;
+				min-width: 180px;
+				max-width: min(320px, 90vw);
+			}
+
+			
+			
+			.node {
+				transform: translateX(-50%);
+				/*z-index: 1;/**/
+			}
+			
+			
+			/* Center node */
+			.node.center {
+			  /*margin-left: auto;
+			  margin-right: auto;/**/
+				transform: translateX(-50%);
+			}
+
+			/* Left node */
+			.node.left {
+			  /*margin-right: auto;/**/
+			  transform: translateX(-100%);
+			}
+
+			/* Right node */
+			.node.right {
+			  /*margin-left: auto;/**/
+			  transform: translateX(0);
+			}
+			
+			.node.left .tooltip::after {
+			  
+				transform: translateX(50%);
+			  
+			}
+			
+			.node.right .tooltip::after {
+			  
+				transform: translateX(-100%);
+			  
+			}
+			
+			
+			.thefinalclosure {
+				
+				background: #bbc;
+				margin: 0px 100px 0px 100px;
+				padding: 50px;
+				border: 2px solid #286da8;
+		    border-radius: 8px;
+				box-shadow: 0 5px 6px rgba(0,0,0,0.55);
+			}
+			
+			.ChatGPT {
+				background: #dde;
+				margin: 0px 100px 0px 100px;
+				padding: 50px;
+				border: 2px solid #286da8;
+			}
+			
+			@media (max-width: 700px) {
+
+			  .node {
+			    left: 50% !important;
+			    right: auto !important;
+			    transform: translateX(-50%) !important;
+
+			    width: 90%;
+			    max-width: 420px;
+			    text-align: left;
+			  }
+				
+				.ChatGPT {
+					background: #fff;
+					margin: 30px;
+					padding: 50px;
+					
+				}
+				
+				.thefinalclosure {
+					background: #bbc;
+					margin: 30px;
+					padding: 50px;
+					
+				}
+				
+				
+			}
+			
+			
+			
+			
+			
+			
+			/*
+			.tooltip.left::after {
+			  right: 110%;
+			  top: 50%;
+			  transform: translateY(-50%);
+			}
+			
+			.node.left .tooltip.success::after {
+			  left: 110%;
+			  top: 50%;
+			  
+			}/**/
+			
+			/* Highlight pulse */
+			.jump-highlight {
+			  animation: pulse 1.5s ease-out;
+			}
+
+			@keyframes pulse {
+			  0% {
+			    box-shadow: 0 0 0 0 rgba(0, 150, 255, 0.6);
+			  }
+			  100% {
+			    box-shadow: 0 0 0 12px rgba(0, 150, 255, 0);
+			  }
+			}
+
+			/* Arrow indicator */
+			.jump-arrow {
+			  position: absolute;
+			  left: -54px;
+			  top: 50%;
+			  transform: translateY(-50%);
+			  font-size: 30px;
+			  color: #fff;
+			  animation: bounce 0.2s ease-in-out infinite alternate;
+			  pointer-events: none;
+				z-index: 999;
+				text-shadow: 
+				  -1px -1px 0 #286da8, 
+					1px -1px 0 #286da8, 
+					-1px 1px 0 #286da8, 
+					1px 1px 0 #286da8;
+				
+			}
+			
+			[data-target] {
+			  cursor: pointer;
+				color: #559;
+				text-decoration: underline dotted;
+				text-decoration-color: rgba(100,100,100,0.4);
+				text-decoration-thickness: 1px;
+			}
+			
+			[data-target]:hover {
+			  color: #286da8;
+				
+			}
+			
+
+			@keyframes bounce {
+			  from {
+			    transform: translateY(-50%) translateX(0);
+			  }
+			  to {
+			    transform: translateY(-50%) translateX(-6px);
+			  }
+			}
+			
+			
+			
+			/* trivia blocks */
+			.trivia {
+				position: relative;
+				background: linear-gradient(
+			    90deg,
+			    
+					#72b0c0,
+					#61a5b8,
+					#8fb1bc,
+					#9fc6c4,
+					#8fb1bc,
+					#61a5b8,
+					#72b0c0
+						
+				);
+			  max-width: 400px;
+			  padding: 12px;
+			  border: 1px solid #286da8;
+			  border-radius: 6px;
+			  font-family: system-ui, sans-serif;
+				margin: 40px auto;
+			}
+
+			.question {
+			  font-weight: bold;
+			  margin-bottom: 10px;
+			}
+
+			.option {
+			  display: block;
+				position: relative;
+			  width: 100%;
+			  margin: 6px 0;
+			  padding: 8px;
+			  cursor: pointer;
+			  border: 1px solid #aaa;
+			  background: #f9f9f9;
+			  border-radius: 4px;
+			}
+			
+			
+			
+
+			.option:hover {
+			  background: #eee;
+			}
+
+			.option.correct {
+			  background: #d4edda;
+			  border-color: #28a745;
+			  color: #155724;
+			}
+
+			.option.wrong {
+			  background: #f8d7da;
+			  border-color: #dc3545;
+			  color: #721c24;
+			}
+
+			.option:disabled {
+			  cursor: default;
+			  opacity: 0.8;
+			}
+
+			.result {
+			  margin-top: 10px;
+			  /*font-weight: bold;/**/
+			}
+			
+			
+			/* pros / cons list*/
+			.pros-cons {
+			  max-width: 700px;
+			  margin: 40px auto;
+			  padding: 20px;
+			  border: 2px solid #eee;
+			  border-radius: 8px;
+			  background: #286da8;
+			  color: #fff;
+			}
+
+			.pc-title {
+			  text-align: center;
+			  margin-bottom: 20px;
+			}
+
+			.pc-grid {
+			  display: grid;
+			  grid-template-columns: 1fr 2px 1fr;
+			  gap: 20px;
+			}
+
+			.pc-divider {
+			  background: #fff;
+			}
+
+			.pc-column h3 {
+			  text-align: center;
+			  margin-bottom: 10px;
+			}
+
+			.pc-column ul {
+			  padding-left: 20px;
+			}
+
+			.pros li::marker {
+			  color: #4caf50; /* green */
+			}
+
+			.cons li::marker {
+			  color: #f44336; /* red */
+			}
+			
+			
+			.dark-wrapper {
+				background: #000;
+				box-shadow: 0px 0px 50px 50px rgba(0,0,0,1.0);
+			}
+			
+			/* svg wrapper */
+			.svg-wrapper-main {
+			  /*max-width: 900px;/**/
+				background: #000;
+				box-shadow: 0px 0px 50px 50px rgba(0,0,0,1.0);
+				height: 100%;
+				
+				display: flex;
+				justify-content: center; /* horizontal */
+				align-items: center;
+				color: #fec;
+				font-size: 10px;
+				font-weight: 700;
+			}
+
+			
+			
+			.svg-wrapper {
+				width: 300px;
+				margin: 100px;
+				text-align: center;
+				text-transform: uppercase;/**/
+				letter-spacing: 0.2em;
+				text-shadow: 0 0 8px #fe0;
+				/*top: 50%;/**/
+				
+				/*display: flex;
+				
+				/*height: 100%;
+			  /*max-width: 300px;
+				height: 100px;
+				display: flex;
+				justify-content: center; /* horizontal */
+				
+			}
+
+			.svg-wrapper svg {
+				transform: skewX(-12deg);
+				width: 100px;
+			  /*width: 100%;
+			  height: auto;
+				text-align: center;
+				display: block;
+				margin: 0 auto;/**/
+			}
+			
+			.caps {
+				font-size: 12px;
+			}
+			
+			/*
+			 e 396
+			l 333
+			n c9f
+			m fce
+			*/
+			
+			.m {
+				color: #fce;
+				font-size: 10px;
+				margin-left: 3px;
+				margin-right: 3px;
+				
+			}
+			.n {
+				color: #939;/*#c9f;*/
+				font-size: 10px;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+			.l {
+				color: #333;
+				font-size: 10px;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+			.e {
+				color: #396;
+				font-size: 10px;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+			.s {
+				color: #fff;
+				font-size: 10px;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+			
+			.em {
+				color: #396;
+				background: #fce;
+				font-size: 10px;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+			
+			.nl {
+				color: #939;/*#c9f;*/
+				background: #333;
+				font-size: 10px;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+			
+			.v {
+				color: #396;
+				background: #fce;
+				font-size: 10px;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+			
+			.setup2 .v {
+				font-size: 15px;
+			}
+			
+			.setup2 .r {
+				font-size: 15px;
+			}
+			
+			.r {
+				color: #333;
+				background: #939;/*#c9f;*/
+				font-size: 10px;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+			
+			.y {
+				color: #ff9;
+				font-size: 10px;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+			
+			.z {
+				font-size: 22px;
+				letter-spacing: -0.3em;
+				color: #286da8;
+				display: inline-block;
+				padding-right: 5px;
+				
+			}
+			
+			.date {
+				color: #888;
+				font-style: italic;
+				display: block;
+				padding-bottom: 5px;
+			}
+			
+			.date-no-msg {
+				color: #fff;
+				font-style: italic;
+				display: block;
+				padding-bottom: 10px;
+				text-shadow:
+				    1px 1px 1px #888,
+				   -1px 1px 1px #888,
+				    1px -1px 1px #888,
+				   -1px -1px 1px #888;
+			}
+			
+			
+			
+			.node-icon {
+				position: absolute;
+				top: 4px;      /* distance from top */
+				left: 4px;     /* distance from left */
+				font-size: 8px !important; /* size of icon / text */
+				pointer-events: none; /* optional: doesn’t block clicks on node */
+			}
+			
+			.node-icon-fc {
+				position: relative;
+				top: -30px;      /* distance from top */
+				left: -30px;     /* distance from left */
+				font-size: 8px !important; /* size of icon / text */
+				pointer-events: none; /* optional: doesn’t block clicks on node */
+			}
+			
+			.z.node-icon {
+				font-size: 15px !important; /* size of icon / text */
+			}
+			
+			
+			
+			.gif-container {
+				display: flex;
+				justify-content: center;
+			}
+			
+			.gif-container img {
+				
+				
+			  max-width: 400px;
+			  height: auto;
+				text-align: center;
+				
+			}
+			
+			.result {
+			  margin-top: 10px;
+			  display: none;
+			}
+
+			.result.correct {
+			  color: #333;
+			}
+
+			.result.wrong {
+			  color: #333;
+			}
+			
+			
+			
+			
+			.tt {
+			  display: inline;
+			  position: relative;
+			  cursor: pointer;
+			  color: #558;
+			  text-decoration: underline dotted;
+				
+				width: fit-content;
+			}
+
+			.tb {
+			  position: fixed;        /* escape layout */
+			  left: 0;                /* align to viewport left */
+			  width: 100vw;           /* full screen width */
+
+ 			  padding-top: 10px;
+				padding-bottom: 10px;
+				padding-left: 150px;
+				padding-right: 100px;
+				box-sizing: border-box;
+				
+			  background: #467;
+			  color: white;
+			  /*text-align: center;/**/
+				pointer-events: none;
+
+			  opacity: 0;
+			  transition: opacity 0.2s ease;
+			  z-index: 9999;
+			}
+			
+			.tt:hover {
+				color: #fff;/*#286da8;*/
+			}
+			
+			.ttp:hover .tb {
+			  opacity: 0.7;
+			}
+			
+			@media (max-width: 700px) {
+			  .tb {
+			  	padding-left: 50px;
+			  }	
+			}
+			
+			
+			.show-arrow {
+			    font-family: "Arial", sans-serif;
+			    font-size: 1.0em;
+			    font-weight: bold;
+			    color: #348;
+			}
+			
+			
+			.show-arrow::before {
+			    content: " 🫵🏻 ";
+					margin-left: 10px;
+					margin-right: 4px;
+			    font-size: 2.0em;
+					display: inline-block;
+			    color: #ddf;
+			    
+					text-shadow:
+					    -1px  0    0px #467,
+					     1.5px  0    0px #467,
+					     0   -1px  0px #467,
+					     0    1.5px  0px #467,
+					    -1px -1px  0px #467,
+					     1px -1px  0px #467,
+					    -1px  1px  0px #467,
+					     1px  1px  0px #467;
+					/*transform: rotate(30deg) translateY(8px);*/
+			 }
+			 
+			 [data-target] {
+			     position: relative;
+			 }
+			 
+			 [data-target]:hover::before {
+			     content: "click ↗";
+					 position: absolute;
+					 white-space: nowrap;
+					 z-index: 1000;
+					 
+					 /*display:  inline-block;/**/
+					 /* position: relative;/**/
+					 left: -4em;          /**/
+					 top: 100%;/**/
+					 
+			     
+			     font-size: 2.0em;
+					 color: #ddf;
+ 					 text-shadow:
+ 					    -1px  0    0px #467,
+ 					     1.5px  0    0px #467,
+ 					     0   -1px  0px #467,
+ 					     0    1.5px  0px #467,
+ 					    -1px -1px  0px #467,
+ 					     1px -1px  0px #467,
+ 					    -1px  1px  0px #467,
+ 					     1px  1px  0px #467;
+					 transform: rotate(0deg) translateY(10px);
+			 }
+			 
+			
+			
+		</style>
+</head>
+<body>
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	<div class="image-overlay" id="as-such">
+		<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHV2bm05NWFqanhndTB2YThvMm5jNzJ2Mm9sd3lxeGMyNjBjYTJycSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2JeiNbl3nYjCPAeA/giphy.gif" />
+	</div>
+	
+	<div class="image-overlay" id="make-believe">
+		<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWR0ZnE0am50NnJodWFta2E5ZXluaTYwNzFzZHRwbGtxdTIyNHZ4aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/R8n7YlPHe34dy/giphy.gif" />
+	</div>
+
+
+<div class="dark-wrapper">
+	
+	<div style="height:200px"></div>
+
+	<div class="thefinalclosure bgl">
+	<span class="date">20 September 2021</span>
+	<br>
+	<!-- need a new way to present this email that is also mobile friendly -- breaking it apart
+	https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNThqdTk1OTZ0a2R3d3hiazl3emtkaDN0Mm0zc2pkZ3c0ZXM3bG43ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTk2YJDddqKrMo56MM/giphy.gif
+		
+		https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHV2bm05NWFqanhndTB2YThvMm5jNzJ2Mm9sd3lxeGMyNjBjYTJycSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2JeiNbl3nYjCPAeA/giphy.gif
+	
+	<span class="tt"><span class="tb"></span></span>
+	
+	
+	
+	
+	-->
+
+Dear <span class="m">S██</span> and <span class="e">P██</span>,<br>
+<br>
+I have struggled for a while now on whether or not I should send you this email, however, for my own personal mental health I've come to the conclusion that I need <span class="tt">closure<span class="tb">This is entirely one-sided, so how can he call it "closure"?</span></span>.<br>
+<br>
+Before you read, I want you to know that <span class="tt">this was not written in anger<span class="tb">"...but we are basically blaming you for everything and it's all your fault."</span></span>, and should not be read as such, it is simply me expressing <span class="blame-you"><!-- CHRONIC BLAME -->what you've done</span> and the consequences <span class="hover-reveal" data-img="as-such">of such</span>.<br>
+<br>
+Let's start at the beginning;<br>
+<br>
+<span class="tt">You guys decided to buy a house<span class="tb">This was <i><strong>not</strong></i> the beginning.<br> Why does their account of events, their interpretation of what happened, start <i>in the middle of the summer</i>?</span></span>, we were <span class="tt">left out of the discussion for this process <span class="tb">Lie.<br></span></span>until much later, when things were pretty much <span class="tt">finalized<span class="tb">What "thing" was "finalized", was it:<br><br><strong>A</strong>) <span class="m">S██</span> and <span class="e">P██</span> <i>buying for themselves</i>? or <br><strong>B</strong>) <span class="m">S██</span> and <span class="e">P██</span> <i>not buying with them</i>?<br>
+<br>One of these must have been "finalized" first. So which one?</span></span>. This left us with a feeling of <span class="tt">betrayal<span class="tb">
+	<br>
+	<strong>betrayal</strong> (noun) <br><br>
+	1. violation of a person's trust or confidence, of a moral standard, etc.<br>
+	2. a convenient buzzword <span class="l">██C</span> and <span class="n">██O</span> chose to float around to make their sob story more dramatic than it actually was<br>
+	<br>
+	This word implies that <span class="m">S██</span> and <span class="e">P██</span> broke a promise or something, that some value was being taken away from <span class="l">██C</span> and <span class="n">██O</span>. What were <span class="l">██C</span> and <span class="n">██O</span> being deprived of? What was the thing that those two were so desperately holding on to, that <span class="m">S██</span> and <span class="e">P██</span> were somehow taking away from them just because they were leaving the premises? 
+	Money? Physical proximity? The ability to sleep?<br>
+	<br>
+	Trust? <br>
+	<br>
+</span></span>, however <span class="tt">we were trying to understand<span class="tb">What about this did they have trouble understanding?<br><br><span class="l">██C</span> and <span class="n">██O</span> were clearly upset and "disappointed" with them because they didn't buy a house together. In other words, the only way that <span class="l">██C</span> and <span class="n">██O</span> would have been happy is if all four had continued to reside within the same building. <br>
+	But <i>why?</i> 
+	<span class="l">██C</span> and <span class="n">██O</span> were begging the question this whole time. <br>
+	<br>
+	Buying property is a huge financial decision. The problem was that <span class="l">██C</span> and <span class="n">██O</span> were never qualified to give advice on these matters, and they obviously didn't want to put in the work. <br>
+<span class="m">S██</span> and <span class="e">P██</span> <i>trusted</i> that <span class="l">██C</span> and <span class="n">██O</span> would pay attention and do their homework and research like they had all talked about before they moved in together.<br>
+But that didn't happen and <span class="l">██C</span> and <span class="n">██O</span> instead sat on their asses that whole summer.<br><br><span class="l">██C</span> and <span class="n">██O</span> betrayed <span class="m">S██</span> and <span class="e">P██</span>'s trust. </span></span> and move on.<br>
+<br>
+Next, as part of <span class="tt">the moving on process<span class="tb">The "moving on process" includes <strong><i>acknowledging the failure of the idea</strong> of buying a house together</i>.<br><br>Did they actually acknowledge that the idea failed, or were <span class="l">██C</span> and <span class="n">██O</span> still holding onto the delusion that the four of them would all still buy a house together in the near future?
+</span></span>, we had <span class="tt">a meeting with you guys to get our thoughts out<span class="tb">
+	What was the purpose of that meeting? <br>
+	The fact that <span class="m">S██</span> and <span class="e">P██</span> bought a place for themselves was <i>completely <strong>irrelevant</strong></i>.<br> If they hadn’t bought that condo, they would STILL initiate a meeting for that summer and the discussion would have been <strong>exactly the same</strong>, because they still would have explained to <span class="l">██C</span> and <span class="n">██O</span> that they weren’t going to live there for much longer, that they’d still be searching the housing market for themselves.
+</span></span>. Unfortunately, <span class="tt">we were unable to do this fully, as every time we tried there were tears, pauses and interrupts <span class="tb">
+	
+	<span class="l">██C</span> and <span class="n">██O</span> seemed to think that these interrupts weren't warranted. Going off topic or saying things that were none of their business with regard to <span class="m">S██</span> and <span class="e">P██</span>'s needs and why they made certain decisions, is probably going to require interruption: if they didn't want to be interrupted at that meeting, then <span class="l">██C</span> and <span class="n">██O</span> <i>probably should have provided information that was at least actionable.</i> <br><br>The 'tears, pauses and interrupts' were out of frustration, because during that meeting <span class="l">██C</span> and <span class="n">██O</span> refused to pull their heads out of their asses and look at the bigger picture: <i>All four of them were <strong>not</strong> in a position to be buying a house together</i>.</span></span><span class="blame-you"><!-- CHRONIC BLAME -->from your end</span>. It seemed to us that the meeting was, for you two, more about <span class="tt">making yourselves feel better<span class="tb">
+		<span class="m">S██</span> and <span class="e">P██</span> had worked their asses off for over a decade -- saving up money, getting their degrees, building their careers, <i>building their credit scores</i>.<br> 
+		Because of that hard work they put in, they were able to finally buy a home. They <i>earned</i> it.<br>
+		So yes, they did feel pretty good about it. They were proud of themselves, as they should be.<br>
+		<br>
+		But that wasn't the purpose of the meeting.<br>
+		The meeting was also <i>not</i> an intervention or some sort of confessional booth where they all admit their guilts and wrongdoings, to get all their 'feelings' out. <br>
+		No.<br>
+		The purpose of that meeting was to act as a checkpoint to see where they were at with the idea, to bring useful information to the table so that they could all make decisions as early as possible.<br>
+		
+		Any exchange of information, any discussions to be had, weren't limited to just that one meeting: it still counted as a discussion even if it happened outside of that meeting. The information that <span class="m">S██</span> and <span class="e">P██</span> brought to the table was a conglomeration of all the information that accumulated <i>outside</i> of that meeting leading up to it, some of this information which <span class="l">██C</span> and <span class="n">██O</span> had provided. They were just <i>reviewing</i> what had already been being discussed.<br>
+		<br>
+		Again, if <span class="m">S██</span> and <span class="e">P██</span> hadn't bought that condo, this meeting would still happen.
+		<br>
+		<br>
+		<i>Regardless, what useful information did <span class="l">██C</span> and <span class="n">██O</span> bring to the table at that meeting?</i>
+		<br>
+	</span></span> than <span class="tt">acknowledging why we felt<span class="tb">But <strong><i>why</i></strong> did they feel this way? <br><br>There were plenty of <i>emotions</i> to acknowledge, but there were little to no <i>facts</i> to acknowledge. <span class="l">██C</span> and <span class="n">██O</span> didn't provide anything useful during that meeting, only sentiment.</span></span> <span class="tt">terrible<span class="tb">'terrible' count: <strong>1</strong></span></span>.<br>
+<br>
+It is at this point that we made a <span class="tt">difficult decision of just keeping quiet<span class="tb">This was the lazy route, the easier decision. <br>It would have been <i>more difficult</i> to say something.<br>
+	<br>
+	
+	Setting aside the fact that he and <span class="e">P██</span> were able to communicate between each other the whole time, he is admitting here that the two of them chose silence and disengagement for the entire rest of the summer, after that meeting.<br> But <span class="n">██O</span>'s message in the group chat, <i>"I don't think you guys understand the situation and just so itching to get things done. Relationship doesn't work like that.",</i> implied that <i>more</i> discussion and emotional processing was needed for the relationship to 'work'. <br>
+	<br>To 'protect' the relationship, they stepped aside and allowed the other couple to move forward, yet at the same time they blamed that couple for doing just that--moving forward.<br>
+	<br>From the moment the offer was accepted and then right up to <span class="m">S██</span> and <span class="e">P██</span> moving out of that rental, it was a full month and a half for <span class="l">██C</span> and <span class="n">██O</span> to process their emotions.<br>
+	Was that not enough time for <span class="l">██C</span> and <span class="n">██O</span>'s emotions to catch up?<br>
+	Why should <span class="m">S██</span> and <span class="e">P██</span> slow down?
+	
+</span></span>, in an <span class="tt">attempt to keep the peace and allow you guys to move out peacefully<span class="tb">
+	What would've happened if they <i>didn't</i> "allow [them] to move out peacefully"?<br>
+	<br>
+	Did they refuse to speak in order to <i>protect</i> <span class="m">S██</span> and <span class="e">P██</span>? Or was it really because they were overwhelmed and didn’t handle it well?<br>
+	This wasn’t a war. <span class="m">S██</span> and <span class="e">P██</span> didn't need "protection" from anything. What were they trying to protect <span class="m">S██</span> and <span class="e">P██</span> from?<br>
+	"Keep the peace"? ...but from <i>what</i>, exactly? Communication? Uncomfortable information?<br>
+	It's almost like they were implying a threat.<br> 
+	<br>
+	... so what was the threat?<br>
+	<br>
+	
+	<br>
+
+</span></span>. It was my hope that <span class="tt">'time and distance' would allow us to approach the subject again at a later date<span class="tb"><i><strong>When?</strong></i> <br>This was not an original idea -- <span class="e">P██</span> had already mentioned this first.</span></span>. This was not easy for us, as <span class="tt">we kept in a lot of what we wanted to say<span class="tb">A text or email cannot be interrupted. If the concern was being able to say something <i>without</i> being interrupted, they had the entire rest of the summer to provide this information.<br> If this information was so important, <span class="l">██C</span> and <span class="n">██O</span> would have used any means necessary to get this information to <span class="m">S██</span> and <span class="e">P██</span>.<br>
+	Heck, <i>this email</i> that <span class="l">██C</span> spent the time to type out here, on September 20th of 2021, could have been used to disclose this information:<br>
+	<br>
+	"Dear <span class="m">S██</span> and <span class="e">P██</span>,<br>
+	Here are the things that we didn't get to say at that meeting where you interrupted us ... "<br>
+	<br>
+	The fact that they never bothered to say the things they 'kept in' but <i>so desperately wanted to</i>, despite having the formats available to them the entire time and having plenty of time to do so, meant one of two things:<br>
+	Either 1) all they had were more complaints and emotions, which doesn't help anyone, or 2) they didn't have anything to say at all. <br>In other words, the information they had "kept in" was either <i>useless</i> or <i>non-existent</i>.
+	<br>
+	<br>
+	Conclusion: <i><strong>Liar, liar, pants on fire.</strong></i>
+</span></span>.<br>
+<br>
+Then, shortly before your move out date, you realised that there was more you both needed to say. You told us how upset you were with us for making you feel <span class="tt">terrible<span class="tb">'terrible' count: <strong>2</strong></span></span>, and <span class="tt"><span class="blame-you"><!-- CHRONIC BLAME -->refused to acknowledge that you did anything wrong</span> in the first place<span class="tb"><span class="m">S██</span> and <span class="e">P██</span> hadn't done anything wrong, though.<br>This statement needed to be justified <i>before</i> it could be used as part of whatever "argument" this email was trying to lay out.</span></span>. Of course, <span class="tt">all of the emotions and thoughts we had kept in came out<span class="tb">By not communicating, <span class="l">██C</span> and <span class="n">██O</span> caused their own pent-up frustration to accumulate. <span class="l">██C</span> and <span class="n">██O</span> made it worse over time, for themselves.<br>...but it’s somehow <span class="m">S██</span> and <span class="e">P██</span>'s fault it released?<br> Whose job was it to rip the bandaid off?</span></span>, and <span class="tt"><span class="blame-you"><!-- CHRONIC BLAME -->you decided to 'fix' the situation</span> by speaking to Landlady<span class="tb">Communicating with the Landlady was something they were all <i>supposed to</i> be doing.<br>But what more information could <span class="m">S██</span> and <span class="e">P██</span> possibly give to the landlady, especially <i>after</i> <span class="l">██C</span> had already chosen that second option, and <i>after</i> the exchange of emails with the landlady had already happened?</span></span> 
+(<span class="tt">something I had asked you not to do<span class="tb">What information could they have possibly given to the Landlady that would prove to be problematic for <span class="n">██O</span> and <span class="l">██C</span>?
+		<br>
+		What exactly was it that they didn't want the Landlady to know?</span></span> as we wanted to <span class="tt">salvage our reputation with her)<span class="tb">What does this have to do with reputation? <br> The only reason there would be concern about that is if <span class="l">██C</span> and <span class="n">██O</span> knew they had done something wrong.<br>But why would they even care what she thought about them? It's pretty sad and pathetic that they are allowing some NPC Landlady to have that much power over them.</span></span>.
+<!-- https://youtu.be/5kmi_vcwoOM?t=78   "So...What's this information worth to you?"-->
+<br>
+<br>
+<span class="tt">Unfortunately for us<span class="tb"><span class="l">██C</span> and <span class="n">██O</span>'s backup plan was "unfortunate"?<br>
+<br>
+		At some point, <span class="l">██C</span> and <span class="n">██O</span> sat down and talked with each other about the possibility of who might live down there, and that they might have to have tenants whom they are not comfortable with (whether they had weekend parties keeping them up at night, or whatever). Not only did they acknowledge the potential discomfort of that situation, they also still accepted that as their backup plan. 
+		<!-- you had already anticipated, in writing, in your private conversation with herbie way earlier, where you acknowledged that that situation might make you uncomfortable. You accepted that, you complied with it -->
+		<br>
+</span></span>, <span class="tt"><span class="blame-you"><!-- CHRONIC BLAME -->your constant emails</span> to Landlady<span class="tb">Which emails?<br>The one's <span class="l">██C</span> and <span class="n">██O</span> were cc'd in?</span></span> resulted in her quickly filling your vacant spot downstairs with three young college boys</span>. <span class="tt">Now we are woken up almost every night<span class="tb">No quiet time? Not being able to sleep? <br>Now this sounds familiar...<br>Doesn't sound fun, does it?</span></span> at 1am-3am with talking, yelling, and loud music as well as parties every weekend since they've moved in.<br>
+<br>
+We have tried to speak with these boys about this to find common ground, but alas, they are young dumb college kids, so surprisingly they don't care. They also happen to be sons of friends of Landlady, and due to the fact of <span class="tt">all of <span class="blame-you"><!-- CHRONIC BLAME -->your guys' emails to her</span><span class="tb">This bears repeating: <br><br><strong>Which emails?</strong><br><br></span></span>, she is siding with them on this (despite us <span class="tt">providing proof of their noise<span class="tb"><span class="l">██C</span> and <span class="n">██O</span>, the King and Queen of pettiness.<br> They're damaging their own reputation by doing this.</span></span>).<br>
+<br>
+Now, we are being forced out of the home, and will have to <span class="tt">move for the second time<span class="tb">
+	So? They weren't the only ones who had to move twice.</span></span> this year (hopefully we can receive the same luck you guys did and get out of our lease early).<br>
+<br>
+<span class="hover-reveal" data-img="make-believe">All of this stemmed from</span> <span class="tt"><span class="blame-you"><!-- CHRONIC BLAME -->your decision to 'speed things up'</span> with Landlady<span class="tb">This was <span class="l">██C</span>'s decision as well. He wasn't just cc'd in the email discussion with the landlady, he <i>actively participated</i> in that decision-making.</span></span>. Consequences that <span class="tt">I'm sure you were not aware of
+	
+	<span class="tb">
+		Again, all four of them were well aware of these "consequences". <br>
+		<br>
+		At the time, <span class="l">██C</span> and <span class="n">██O</span> had chosen to establish a situation for themselves where their <i>only option</i> was to rent from house to house to house, paying somebody else's mortgage, with no indication of any effort on their end to steer themselves away from that. <span class="m">S██</span> and <span class="e">P██</span> had already planned ahead and did <i>not</i> want to rent anymore, but all four of them were well aware of what continuing the rental market would look like. <br> 
+<br>
+<span class="l">██C</span> and <span class="n">██O</span> seemed to forget that <i>they themselves also had agency and foresight too</i>.<br>
+Here, <span class="l">██C</span> is framing the problem as <span class="m">S██</span> and <span class="e">P██</span>'s "unawareness", yet at the same time <span class="l">██C</span> and <span class="n">██O</span> were assuming that <span class="m">S██</span> and <span class="e">P██</span> would continue cooperating <i>without question</i>, despite them clearly pointing out the financial concerns in doing so. <span class="l">██C</span> and <span class="n">██O</span> were thus setting a double standard in terms of everyone's responsibilities.<br>
+<br>
+But here's the real question: <br><i>How, on Earth, could <span class="l">██C</span> and <span class="n">██O</span> be so <strong>unaware</strong> of the factors involved in continuing to rent? How could they possibly have not anticipated noisy tenants</i>?<br>
+What was going through <span class="l">██C</span>'s mind when he chose that second option, especially given much earlier he had already <i>accepted</i> that as their backup plan?
+
+
+</span></span>.<br>
+<br>
+<br>
+<span class="tt">So, there you go<span class="tb">"Passive-aggressiveness doesn't solve problems."<br><br>
+	<span class="m">S██</span> actually learned this from <span class="l">██C</span>, when they worked at the pizza place together years before this incident.<br>Now <i>that</i> is funny. </span></span>, and here we are now, <span class="tt">stuck in this situation<span class="tb">Using similar logic, <span class="m">S██</span> and <span class="e">P██</span> were also "stuck" in a situation and wanted to get out.<br>
+		But (now listen carefully!) here's the difference:<br>
+		<br> <span class="m">S██</span> and <span class="e">P██</span> <strong><i>chose not to stay</i></strong> in that rental. <br> <span class="l">██C</span> and <span class="n">██O</span> <strong><i>chose to stay</i></strong> in that rental.<br>
+		<br>
+		So far, so good?<br>
+	<br> <span class="m">S██</span> and <span class="e">P██</span> <strong><i>planned ahead</i></strong> and so <strong>were <i>able to "unstuck"</i> themselves</strong>.<br>
+	<span class="l">██C</span> and <span class="n">██O</span> <strong><i>did not plan ahead</i></strong> and so <strong>were <i>not able to "unstuck"</i> themselves</strong>.<br>
+	<br>
+	<!--Did you catch all that?
+	Does it make sense?
+	Would a picture drawn in crayon help your understanding?-->
+	</span></span>. <span class="tt">Despite all of this I actually do not want you guys to feel<span class="tb">
+	<span class="l">██C</span> seemed to be giving the impression that <span class="m">S██</span> and <span class="e">P██</span> were supposed to feel <i>guilty</i>, for whatever reason that hadn't been specified yet. <br>He is trying to appear as the thoughtful and forgiving one by letting them off the hook <strong>for a crime they hadn't even committed</strong>.</span></span> <span class="tt">terrible<span class="tb">'terrible' count: <strong>3</strong></span></span>, I simply want to move on from this.<br>
+<br>
+The reason I sent this is for closure on my end, and <span class="tt">to remind you guys of the <span class="blame-you"><!-- CHRONIC BLAME -->consequences of your actions</span> so that in the future you don't do this kind of thing<span class="tb">
+	"this kind of thing"?<br>Not only is this not specific, it is also a contradiction: <br>If the consequences couldn’t reasonably be known (they <i>were</i> known: <span class="l">██C</span> and <span class="e">P██</span> had already had this discussion in private already), then how could it be framed as something that should be avoided in the future?<br>
+	Put simply: <i><strong>How is it possible to actively avoid something whilst being unaware of it?</strong></i>
+	<br>
+<br>
+<span class="m">S██</span> and <span class="e">P██</span>'s actions were what led to them to being able to purchase property.<br>
+
+So why was <span class="l">██C</span> injecting so much negativity into this? Instead of saying "consequences of your actions", why didn't he use the phrase "successful results of your actions"? <br>
+<br>
+<span class="l">██C</span> and <span class="n">██O</span> seemed to forget that <i>their <strong>inaction</strong> had consequences too</i>.
+</span></span> <span class="tt">to other people<span class="tb">The next time <span class="m">S██</span> and <span class="e">P██</span> encounter another couple as delusional as these two, they will definitely pay closer attention.<br>
+<br>
+👍 Thanks for the warning, <span class="l">██C</span>! 👍
+</span></span>.<br>
+<br>
+We are in a <span class="tt">terrible<span class="tb">'terrible' count: <strong>4</strong></span></span> place mentally right now, and it's going to take us months or years to heal from this.<br>
+<br>
+<br>
+This is the most important bit, so <span class="tt">please read carefully<span class="tb">Or else what?<br>What would happen if <span class="m">S██</span> and <span class="e">P██</span> disobeyed these demands?<br>What would have happened if <span class="m">S██</span> and <span class="e">P██</span> did expose their side of the story on social media?<br>
+<br>
+<span class="l">██C</span> is bluffing.
+</span></span>;<br>
+-This is not a discussion, <span class="tt">I do not want to hear a reply about this, on any media platform at all<span class="tb">
+	They seemed to forget that <span class="m">S██</span> and <span class="e">P██</span> weren't limited to social media to get their side of the story out.
+</span></span>.<br>
+-Do not try to reach out to either of us, it will only further destroy our mental health<br>
+-Do not try to post publicly about this in an effort to <span class="tt">validate<span class="tb"><span class="l">██C</span> and <span class="n">██O</span>'s shitty attitudes about what happened that summer, including this shitty email, <i>is</i> the validation.<br>
+<span class="m">S██</span> and <span class="e">P██</span> already had reasons for not continuing with the idea of buying a house with <span class="l">██C</span> and <span class="n">██O</span>. <br>
+<br>
+The more <span class="l">██C</span> and <span class="n">██O</span> complained and pointed fingers, the more it proved <span class="m">S██</span> and <span class="e">P██</span>'s point.<br> By refusing to provide an actual argument <i>for</i> this idea, <span class="l">██C</span> was inevitably causing and demonstrating its failure.
+<br>
+<br>
+Miranda Rights exist for a reason -- the right to remain silent is so that one doesn't accidentally incriminate themselves.<br>
+<span class="l">██C</span> did just that, by typing out this email. 
+<br>
+<br>
+Good job, <span class="l">██C</span>.
+</span></span> <span class="blame-you"><!-- CHRONIC BLAME -->what you've done</span><br>
+<br>
+Goodbye, and good luck.<br>
+<br>
+
+</div>
+
+<div style="display: flex; justify-content: center;">
+  <button id="toggle-you" style="color: #467"><b>toggle finger-pointing</b></button>
+</div>
+			 	 
+				 
+				 <div style="height:500px"></div>
+
+</div>
+
+<!-- 
+
+
+list of finger pointing:
+
+you have done wrong
+you interrupted us
+you left us out of the discussion
+you just had the meeting to make yourselves feel better
+you refused to acknowledge wrongdoing
+you decided to 'fix' the situation by speaking to the landlady after we told you not to
+you sent constant emails to the landlady
+you created consequences
+you have done wrong
+
+
+
+-->
+
+
+
+<script>
+document.addEventListener("click", e => {
+  const trigger = e.target.closest("[data-target]");
+  if (!trigger) return;
+
+  const target = document.getElementById(trigger.dataset.target);
+  if (!target) return;
+
+  // Scroll
+  target.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+
+  // Clean up previous indicators
+  document.querySelectorAll(".jump-arrow").forEach(a => a.remove());
+  document.querySelectorAll(".jump-highlight").forEach(h =>
+    h.classList.remove("jump-highlight")
+  );
+
+  // Highlight
+  target.classList.add("jump-highlight");
+
+  // Arrow
+  const arrow = document.createElement("div");
+  arrow.className = "jump-arrow";
+  arrow.textContent = "➜";
+	arrow.color = "#fff";
+  target.appendChild(arrow);
+
+  // Remove after delay
+  setTimeout(() => {
+    arrow.remove();
+    target.classList.remove("jump-highlight");
+  }, 2000);
+});
+</script>
+<script>
+	document.querySelectorAll(".trivia").forEach(trivia => {
+	  const correct = trivia.dataset.answer;
+	  const result = trivia.querySelector(".result");
+	  const options = trivia.querySelectorAll(".option");
+
+	  options.forEach(btn => {
+	    btn.addEventListener("click", () => {
+	      // Prevent multiple answers
+	      //options.forEach(o => o.disabled = true);
+
+	      const choice = btn.dataset.option;
+
+	      result.style.display = "block";
+
+	      if (choice === correct) {
+	        btn.classList.add("correct");
+	        result.className = "result correct";
+	        result.innerHTML = `
+	          <strong style='color: black'>Correct ✅</strong><br>
+	         ${btn.dataset.explain || ""}
+	        `;
+				  options.forEach(o => {
+						o.disabled = true;
+						if (o.className !== "option correct") {
+							o.style.background = "#f9f9f9";
+							o.style.borderColor = "#aaa";
+							//o.style.color = "#000";
+						}
+						//console.log(o.className);
+					});
+	      } else {
+	        btn.classList.add("wrong");
+					
+
+	        //const correctBtn = trivia.querySelector(
+	        //  `.option[data-option="${correct}"]`
+						//);
+	        //correctBtn.classList.add("correct");
+
+	        result.className = "result wrong";
+	        result.innerHTML = `
+	          <strong style='color: black'>Incorrect ❌</strong><br>
+	          ${btn.dataset.hint || ""}
+	        `;
+	      }
+	    });
+	  });
+	});
+</script>
+<script>
+	
+	document.querySelectorAll(".tooltip-fancy").forEach(tip => {
+	  const box = tip.querySelector(".tooltip-box");
+
+	  tip.addEventListener("mouseenter", () => {
+	    const rect = box.getBoundingClientRect();
+	    const padding = 8;
+
+	    let shiftX = 0;
+
+	    if (rect.left < padding) {
+	      shiftX = padding - rect.left;
+	    } else if (rect.right > window.innerWidth - padding) {
+	      shiftX = window.innerWidth - padding - rect.right;
+	    }
+
+	    box.style.transform = `translateX(${shiftX}px)`;
+	  });
+
+	  tip.addEventListener("mouseleave", () => {
+	    box.style.transform = "";
+	  });
+	});/**/
+</script>
+<!--script>
+	document.querySelectorAll(".hover-reveal").forEach(el => {
+	  const img = document.getElementById(el.dataset.img);
+
+	  el.addEventListener("mouseenter", () => {
+	    const rect = el.getBoundingClientRect();
+
+	    img.style.display = "block";
+	    img.style.top = rect.top - img.offsetHeight - 10 + "px";
+	    img.style.left = rect.left + "px";
+	  });
+
+	  el.addEventListener("mouseleave", () => {
+	    img.style.display = "none";
+	  });
+	});
+</script-->
+<!--script>
+document.querySelectorAll(".hover-reveal").forEach(el => {
+  const overlay = document.getElementById(el.dataset.img);
+  const img = overlay.querySelector("img");
+
+  el.addEventListener("mouseenter", () => {
+    const rect = el.getBoundingClientRect();
+
+    overlay.style.display = "block";
+
+    // place image ABOVE the text by 12px
+    const gap = 12;
+    overlay.style.top = rect.top - img.offsetHeight - gap + "px";
+  });
+
+  el.addEventListener("mouseleave", () => {
+    overlay.style.display = "none";
+  });
+});
+</script-->
+<script>
+	// test DELETE if this breaks
+	document.addEventListener("click", (e) => {
+	  if (!e.target.closest(".hover-reveal")) {
+	    document.querySelectorAll(".image-overlay").forEach(o => {
+	      o.style.display = "none";
+	    });
+	  }
+	});
+	
+	document.querySelectorAll(".hover-reveal").forEach(el => {
+	  const overlay = document.getElementById(el.dataset.img);
+
+	  // Desktop hover
+	  el.addEventListener("mouseenter", () => {
+	    overlay.style.display = "block";
+	  });
+
+	  el.addEventListener("mouseleave", () => {
+	    overlay.style.display = "none";
+	  });
+
+	  // Mobile tap
+	  el.addEventListener("click", (e) => {
+	    e.preventDefault();
+
+	    if (overlay.style.display === "block") {
+	      overlay.style.display = "none";
+	    } else {
+	      overlay.style.display = "block";
+	    }
+	  });
+	});
+	
+	document.addEventListener("click", () => {
+	  document.querySelectorAll(".image-overlay").forEach(o => {
+	    o.style.display = "none";
+	  });
+	});
+	
+	function restartGif() {
+
+	    const gif = document.getElementById("gif");
+
+	    const cleanSrc = gif.src.split("?")[0];
+
+	    gif.src = cleanSrc + "?t=" + Date.now();
+	}
+	
+</script>
+<script>
+	document.querySelectorAll('.tt').forEach(tt => {
+	  const tb = tt.querySelector('.tb');
+
+	  tt.addEventListener('mouseenter', () => {
+	    const rect = tt.getBoundingClientRect();
+
+	    // Position directly above the hovered text
+	    const topPosition = rect.top - tb.offsetHeight;
+			//tt.style.backgroundColor = "#f00";
+
+	    tb.style.top = topPosition + 'px';
+	    tb.style.opacity = '0.95';
+	  });
+
+	  tt.addEventListener('mouseleave', () => {
+	    tb.style.opacity = '0';
+	  });
+	});
+	
+	
+	const button = document.getElementById("toggle-you");
+
+	button.addEventListener("click", () => {
+	    document.querySelectorAll(".blame-you").forEach(span => {
+	        span.classList.toggle("show-arrow");
+	    });
+	});
+	
+</script>
+
+</body>
+</html>
