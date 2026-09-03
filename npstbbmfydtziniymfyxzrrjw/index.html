@@ -5947,10 +5947,10 @@ For the rest of the week, if there are any questions, please let us know. Thank 
 	If they <i>truly</i> didn’t take their help for granted, then at this moment why would it have mattered whether they continued staying on the lease?
 	
 	
-<!-- TODO: explain further -->
+<!-- TODO: explain further  never_took_for_granted -->
 </span></span> <span class="tt">Did you do all those things for returns? <span class="tb">One simple 'return' would have been sufficient: respect their autonomy by allowing them to have their own place <i>without condition</i>.</span></span>
-<span id="never_took_for_granted" class="tt">
-	We never took it for granted.
+
+<span id="never_took_for_granted" class="tt">We never took it for granted.
 	<span class="tb">
 		<span class="l">🅒</span> provided Reason #1 for not staying on the lease: <strong>It wasn't about helping <span class="l">🅒</span> and <span class="n">🅞</span>, it was about following the rules</strong>.
 		<br>
@@ -6531,6 +6531,9 @@ We will be by the house on the afternoon of August 31, 2021.
 
 
 </div>
+
+
+<span id="last_page_object"> &nbsp; </span>
 
 
 <div style="display: flex; justify-content: center">
@@ -7463,13 +7466,30 @@ This will be the real last message from us. I won't be able to receive either of
 
 <div class="pros-cons">
   <h2 class="pc-title">Fix the Social Media Post</h2>
+	
 	<div style="display: flex; justify-content: center">
-	This story involves <span class="tooltip-fancy">&nbsp; two entities &nbsp;<span class="tooltip-box">for example: 
-		<br> - two couples
-		<br> - two business partners</span></span> working together to reach a <span class="tooltip-fancy">&nbsp; common goal <span class="tooltip-box">for example:
-		<br> - testing an idea together
-		<br> - running a business together</span></span>.
-</div>
+	<div>
+	This story involves 
+	<span class="tooltip-fancy">
+		two entities
+		<span class="tooltip-box">
+			for example: 
+		  <br> - two couples
+		  <br> - two business partners
+		</span>
+	</span> 
+	working together to reach a 
+	<span class="tooltip-fancy">
+		common goal 
+		<span class="tooltip-box">
+			for example:
+		  <br> - testing an idea together
+		  <br> - running a business together
+		</span>
+	</span>.
+  </div>
+  </div>
+	
 	<h4 style="display: flex; justify-content: center">How can we make this Facebook post sound more reasonable?</h4>
 	
 	<div style="display: flex; justify-content: center">
@@ -8083,6 +8103,7 @@ four houses: fine before, moved in, stress increased, moved out, stress went awa
 </div>
 
 
+<span data-target='last_page_object'>end</span>
 
 
 <!--
@@ -8170,8 +8191,16 @@ document.addEventListener("click", e => {
   if (!target) return;
 
   // Scroll
+	console.log({
+	    target: target.id,
+	    scrollHeight: document.documentElement.scrollHeight,
+	    innerHeight: window.innerHeight,
+	    scrollY: window.scrollY,
+	    targetTop: target.getBoundingClientRect().top
+	});
+	
   target.scrollIntoView({
-    behavior: "smooth",
+    behavior: "auto",
     block: "center"
   });
 
