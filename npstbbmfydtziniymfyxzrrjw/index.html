@@ -11,15 +11,17 @@
 			
 			html {
 				scroll-behavior: smooth;
-				overflow-x: hidden;
 			}
 			
-			/*
+			
 			html, body {
-			  height: 100%;
-				margin: 0; 
-			  padding: 0;
-				overflow-x: hidden;
+			  width: 100%;
+				margin: 0px;
+				padding: 0;
+				/*margin: 0; 
+			  padding: 0;/**/
+				/*overflow-x: hidden;/**/
+				overflow-x: clip;
 			}/**/
 			
 			body {
@@ -27,12 +29,20 @@
 				
 				background: #fff;
 				color: #111;
+				
+				/*overflow-x: hidden;
+				width: 100%;
 				/**/
 				/*
 				background: #333;
 				color: #fff;
 				/**/
 				
+			}
+			
+			* {
+			    box-sizing: border-box;
+					/*outline: 1px solid red;/* debug */
 			}
 			
 			.main-title {
@@ -357,7 +367,8 @@
 				/*box-shadow: 2px 2px 6px rgba(0,0,0,0.55);/**/
 		    /*z-index: 1;/**/
 				
-		    max-width: 500px;
+		    /*max-width: 500px;/**/
+				max-width: calc(100vw - 10px);
 		    /*text-align: left;/**/
 		  }
 			/*
@@ -393,6 +404,7 @@
 			
 			.node.bgl {
 				border: 6px solid #333;
+				
 			}
 			
 			.node.bgs {
@@ -460,9 +472,6 @@
 				/*z-index: 2;/**/
 			}
 			
-			
-			
-			
 			.tooltip-box {
 				opacity: 0;
 				pointer-events: none;
@@ -485,18 +494,67 @@
 				/*z-index: 10;/**/
 			  background: #286da8;
 			  color: #fff;
-			  padding: 10px 10px;/**/
+			  padding: 10px 10px 10px 10px;/**/
+				/*margin: 10px 10px 10px 10px;/**/
 			  border-radius: 4px;
-				/*min-width: 50px;/**/
+				/*min-width: 100px;/**/
 				/*max-width: 300px;/**/
-				max-width: min(80vw, 420px);/**/
+				/*max-width: min(80vw, 420px);/**/
+				max-width: calc(100vw - 20px);/**/
+				/*width: calc(max-content);/**/
 				width: max-content;/**/
-				box-sizing: border-box;
+				/*box-sizing: border-box/**/
 				
 				
 			}
 			
 			
+			
+			
+			/*
+			.node {
+			    outline: 3px solid red;
+			}
+			
+			.timeline {
+			    outline: 3px solid orange;
+			}
+
+			/* debug */
+			
+			
+			/*
+			
+.tooltip-fancy {
+  position: relative;
+	display: inline;
+	color: #66c;
+  cursor: pointer;
+}
+
+.tooltip-box {
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	bottom: 100%;
+	white-space: normal;
+	transition: opacity 0.0s;
+  background: #286da8;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+  border-radius: 4px;
+	max-width: calc(100vw - 20px);
+	width: max-content;
+}
+
+@media (max-width: 700px) {
+	.tooltip-box {
+	  padding: 10px 10px 10px 10px;
+		max-width: calc(100vw - 40px);
+  }
+}
+			
+		*/
 			
 			
 			
@@ -756,7 +814,7 @@
 				background: #ccc; /*#c8e1ea;*/
 				border: 1px solid #222;
 				border-radius: 8px;
-				width: 500px;
+				width: 400px;
 				/*max-width: 100% !important;/**/
 				/*width: 80% !important;/**/
 				/*box-shadow: none;/**/
@@ -791,13 +849,17 @@
 			}
 			
 			
-			@media (max-width: 800px) {
+			@media (max-width: 700px) {
 			    .node.left {
-			        transform: translateX(-20%);
+			        transform: translateX(-15%);
+							width: 230px;
 			    }
 
 			    .node.right {
-			        transform: translateX(20%);
+			        transform: translateX(15%);
+							/*width: 230px;/**/
+							width: min(230px, calc(100vw - 40px));
+							max-width: calc(100vw - 40px);
 			    }
 					
 					.node.no-msg {
@@ -818,6 +880,32 @@
 						padding: 50px;/**/
 					
 					}
+					
+					.tooltip-box {
+					  padding: 10px 10px 10px 10px;/* <- */
+						/*margin: 10px 10px 10px 10px;/**/
+						/*min-width: 100px;/**/
+						/*max-width: 300px;/**/
+						/*max-width: min(80vw, 420px);/**/
+						max-width: calc(100vw - 40px);/* <- */
+						
+						/*width: calc(max-content);/**/
+						/*width: max-content;/* <- */
+						/*box-sizing: border-box; /**/	
+					}
+					
+					/*
+					[data-target]:hover::before {
+	 			     content: "click ↑";
+	 					 position: absolute;
+	 					 white-space: nowrap;
+	 					 z-index: 1000;
+					   color: #f00;
+	 					 
+	 					 left: 0em;
+	 					 top: 100%;
+					}
+					/**/
 			}
 			/**/
 			
@@ -1389,7 +1477,7 @@
 			  opacity: 0.7;
 			}
 			
-			@media (max-width: 700px) {
+			@media (max-width: 600px) {
 			  .tb {
 			  	padding-left: 50px;
 			  }	
@@ -1635,8 +1723,40 @@
 </head>
 <body>
 	
-
+<!-- NEW TODO
 	
+	
+	-->
+
+<div style="height:1000px; display: flex; justify-content: center">
+<br>
+
+<div class="setup2" >
+
+
+Hello fellow Web Surfer!<br> 
+<br>
+Before you decide to scroll further, the following three exhibits shall be entered into evidence. You and the Court of Internet Gods may wish to review them before determining whether the events that follow could reasonably have ended any other way.<br>
+<br>
+<!-- div style="display: flex; justify-content: center"-->
+
+<strong>Exhibit A:</strong> &nbsp; &nbsp; 
+<a href="https://www.reddit.com/r/personalfinance/comments/pb2fay/is_purchasing_a_house_with_long_term_close/" target="_blank">
+	<i>"Is purchasing a house with long term close friends feasible?"</i>
+</a>
+<br>
+<br>
+<strong>Exhibit B:</strong> &nbsp; &nbsp; 
+<a href="https://www.reddit.com/r/FirstTimeHomeBuyer/comments/1kh62e5/should_i_coown_with_a_friend/" target="_blank">
+	<i>"Should I co-own with a friend"</i>
+</a>
+
+
+
+<br>
+
+</div>
+</div>
 
 
 
@@ -1920,13 +2040,6 @@ The basement <span class="n">🅞</span><span class="l">🅒</span> were living 
 <br>
 
 </div>
-
-	<!-- 
-	TODO Trolley Problem 1: 
-				(do nothing) not test the idea of buying a house together
-		    (pull lever) test the idea
-		
-	-->
 
 
 <div class="node no-msg">
@@ -2393,8 +2506,7 @@ While residing in that rental, they would continue exploring the possibility and
 </div>
 
 
-<!-- 
-TODO image
+<!-- NEW TODO image
  carrying the torch, chasing behind with a backup torch (show near the start, after the first mortgage meeting), marching happily
 
 -->
@@ -3122,8 +3234,7 @@ Who should bring it up first?
 
 
 
-<!-- 
-TODO image
+<!-- NEW TODO image
  carrying the torch, chasing behind with a bucket of water (show after j quit his job)
 
 -->
@@ -3408,14 +3519,16 @@ Problem solved.<br>
 
 
 <div style="display: flex; justify-content: center">
-<div class="setup2"> <!-- TODO -->
+<div class="setup2">
 
 At this point, two full months, May and June, of the "test run" had been completed. Throughout June, the evidence and red flags against the idea were already building up. Not only that, there was already talk about how the housing planning was going. These discussions weren't written down, but <i>all parties knew that house-hunting and research was continuously happening while renting together</i>.<br>
-<!--br>
+<!-- NEW TODO
 
-(Already started to establish that both couples should be living separately)<br>
-**venn diagram of living spaces**<br>
-find times where separate food etc <br-->
+(Already started to establish that both couples should be living separately)
+**venn diagram of living spaces**
+find times where separate food etc
+
+-->
 
 <br>
 <br>
@@ -3482,7 +3595,7 @@ Let's make a pros and cons list!
 
 
 <div style="display: flex; justify-content: center">
-<div class="setup2"> <!-- TODO -->
+<div class="setup2">
 <br>
 It's important to note that, although none of the 'cons' listed above make the idea impossible, the moment they decide to live separately (exactly like they were doing before), all of these potential issues magically disappear into thin air. Poof!
 
@@ -3517,12 +3630,6 @@ It's important to note that, although none of the 'cons' listed above make the i
 <div style="height:200px"></div>
 
 
-	<!-- 
-	TODO Trolley Problem 2: ""
-				(do nothing) not buy a place -- keep looking and explain the situation
-		    (pull lever) buy a place -- have meeting to go over the next steps to figure out the living space
-		
-	-->
 		
 <!-- TROLLEY 2 -->
 <div style="display: flex; justify-content: center">
@@ -3803,13 +3910,7 @@ The question now was whether they should go ahead and buy a place for themselves
 
 <div style="height:400px"></div>
 
-		
-	<!-- 
-	TODO Trolley Problem 3: 
-				(do nothing) no meeting -- 
-		    (pull lever) set up a meeting -- 
-		
-	-->
+
 <!-- TROLLEY 3 -->
 <div style="display: flex; justify-content: center">
 	
@@ -4082,14 +4183,7 @@ Hmm ... is a meeting about this situation really necessary?<br>
 
 </div>
 
-		
-	<!-- 
-	TODO Trolley Problem 3.5: ""
-				(do nothing) explain very little -- 
-		    (pull lever) provide all the information -- 
-		
-	-->
-		
+
 <div style="height:200px"></div>
 
 <div style="display: flex; justify-content: center">
@@ -4510,10 +4604,7 @@ What should <span class="e">🅟</span><span class="m">🅢</span>'s strategy be
 
 
 <div class="dark-wrapper" style="height: 1400px">
-	<!-- 
-	TODO disclaimer
-		
-	-->
+	
   <div style="height:300px;"></div>
 	<div style="height:200px; text-align: center; color: #fff">
 		Disclaimer: The following animation is based entirely on memory, as no footage of the actual event exists.
@@ -4676,7 +4767,7 @@ What should <span class="e">🅟</span><span class="m">🅢</span>'s strategy be
 	<div class="node right bgl">
 	<span class="l node-icon">🅒</span>
 	<span class="date">29 July 2021, 1:52 pm</span>
-Sure, let her know that I can be the main contact as well!<br>
+Sure, let them know that I can be the main contact as well!<br>
 <span class="n">🅞</span> and I were talking about the downstairs renter situation as well, you and I should discuss it at some point soon
 	</div>
 	
@@ -5791,8 +5882,6 @@ For the rest of the week, if there are any questions, please let us know. Thank 
 	bluffing
 	overdramatizing
 	
-	
-	
 	-->
 	
 <div class="dark-wrapper">
@@ -5872,14 +5961,16 @@ For the rest of the week, if there are any questions, please let us know. Thank 
  <br>
 	Throughout all this <span class="tt">shit show<span class="tb">This is her choice of vocabulary, her sentiment.<br>
 		Why was she calling it that?<br>
-		What was it about the situation that made it a "shit show"?</span></span>, there are the moments and thoughts that <span class="tt">made me feel despise myself due to the confusion, frustration, anger, shame and other feelings. <!--span class="tb">
+		What was it about the situation that made it a "shit show"?</span></span>, there are the moments and thoughts that <span class="tt">made me feel despise myself due to the confusion, frustration, anger, shame and other feelings. 
+<!-- span class="tb">
 		How to play the Feelings game: whoever can create the longest comma-separated chain of emotions gets a gold sticker with the word "Professional Victim" on it.<br>
 		Here are some more to help you get started:
 		<br>
 		guilt, embarrassment, resentment, disappointment, sadness, loneliness, dispair, anxiety, fear, helplessness, insecurity, jealousy, bitterness, regret, hopelessness, grief, irritation, exhaustion, numbness...<br>
 		<br>
 		(Notice that ALL of these emotions become benign the moment they all go back to the way it was before they all moved in together.)
-		</span></span> <span class="tt"-->But I didn't want to react emotionally or say everything I felt<span class="tb">
+		</span></span> <span class="tt" -->
+			But I didn't want to react emotionally or say everything I felt<span class="tb">
 		How does this help their case for buying a house together?
 			
 		</span></span>.<br>
@@ -5953,6 +6044,9 @@ This is a perfect example of <span class="n">🅞</span> trying to run away from
 <div style="height:200px"></div>
 
 
+<!-- NEW TODO 
+  updated comment
+-->
 <div class="pros-cons">
   <h2 class="pc-title">Fix the Responses</h2>
 	<h4 style="display: flex; justify-content: center">How can we make these responses sound more reasonable?</h4>
@@ -5992,7 +6086,10 @@ This is a perfect example of <span class="n">🅞</span> trying to run away from
 			<br>
 		  </div>
 			<div id="n-response-good" style="display: none">
-				<span style="color: #080">First of all</span>, things have been happening so fast, it slipped our minds! Let's have a face to face chat, as you suggested before. It's good that you found your home you were dreaming about it so long. We hope you can start fresh in your new chapter of life. 🙂
+				<span style="color: #080">First of all</span>, things have been happening so fast, it slipped our minds! We have been trying hard to process all of this but  also trying to be objective and rational about everything.
+				<br>
+				<br>
+				Let's have a face to face chat, as you suggested before. It's good that you found your home you were dreaming about it so long. We hope you can start fresh in your new chapter of life. 🙂
 				<br>
 				<br>
 				<span style="font-size: 30px; display: flex; justify-content: center">✅ 👍</span>
@@ -6004,6 +6101,7 @@ This is a perfect example of <span class="n">🅞</span> trying to run away from
     </div>
   </div>
 </div>
+
 	
 	
 	<div class="timeline">
@@ -6272,7 +6370,7 @@ Thanks,
 	<div class="node right bgl">
 	<span class="l node-icon">🅒</span>
 	<span class="date">28 August 2021, 12:13 pm</span>
-	Please <span class="tooltip-fancy">do not email Landlord back<span class="tooltip-box">"don't talk to the landlord" count: <strong>2</strong></span></span>, I will email them myself when i've spoken with <span class="n">🅞</span>.<br>
+	Please <span class="tooltip-fancy">do not email Landlord back<span class="tooltip-box">"don't talk to the landlord" count: <strong>2</strong></span></span>, I will email her myself when i've spoken with <span class="n">🅞</span>.<br>
 	But I believe <span class="tooltip-fancy">we will take option 2<span class="tooltip-box">He was already deciding on Option 2, when he <i>knew</i> this option meant they wouldn't get to choose who lived underneath them. <br>
 		<br>
 		He is showing concern, here, but about <i>what</i>, exactly? <br>
@@ -6300,7 +6398,7 @@ Thanks,
 	<div class="node right bgl">
 	<span class="l node-icon">🅒</span>
 	<span class="date">28 August 2021, 12:33 pm</span>
-	Let me know asap so I can email them
+	Let me know asap so I can email her
   </div>
 	
 	<div class="node left bge">
@@ -6313,7 +6411,7 @@ Thanks,
 	<div class="node right bgl">
 	<span class="l node-icon">🅒</span>
 	<span class="date">28 August 2021</span>
-	Excellent, I will email them shortly then<br>
+	Excellent, I will email her shortly then<br>
   </div>
 	
 	
@@ -6322,8 +6420,9 @@ Thanks,
 </div>
 
 
-	<!-- 
-	TODO Trolley Problem 6: 
+	<!-- NEW TODO 
+		
+		Trolley Problem 6: 
 		(do nothing) Option 1 stay on the lease
 		(pull lever) Option 2 end the lease
 		
@@ -6458,7 +6557,7 @@ Despite the above, <span class="l">🅒</span> ignores <span class="e">🅟</spa
 <br>
 <span class="l">🅒</span> emails the Landlord to confirm/understand these two options.<br>
 <br>
-<span class="tooltip-fancy"><a href="https://youtu.be/5kmi_vcwoOM?t=78"><strong><i>After</i> all of the above necessary information had already been exchanged between the two couples and the landlord, <span class="l">🅒</span> then tells <span class="m">🅢</span> and <span class="e">🅟</span> not to speak with the Landlord.</strong></a><span class="tooltip-box">It's the attempt to control information <i>after</i> everything is already said and done&mdash;that's the joke.</span></span><br>
+<span class="tooltip-fancy"><a href="https://youtu.be/5kmi_vcwoOM?t=78"><strong><i>After</i> all of the above necessary information had already been exchanged between the two couples and the landlord, <span class="l">🅒</span> then tells <span class="m">🅢</span> and <span class="e">🅟</span> not to speak with her.</strong></a><span class="tooltip-box">It's the attempt to control information <i>after</i> everything is already said and done&mdash;that's the joke.</span></span><br>
 <br>		
 <span class="l">🅒</span> and <span class="n">🅞</span> then email the Landlord themselves, opting for <span class="m">🅢</span> and <span class="e">🅟</span> to end the lease because it "worked better". <span class="l">🅒</span> and <span class="n">🅞</span> then sign the modified sublease.<br>
 <br>
@@ -7210,6 +7309,7 @@ Feel free to use or scrap the App thing, I won't be offended. There's some very 
 
 
 
+
 		<div class="node no-msg">
 		<span class="date-no-msg">28 October 2021</span>
 By this time, <span class="n">🅞</span> and <span class="l">🅒</span> had already blocked and unfriended <span class="e">🅟</span> and <span class="m">🅢</span> on Facebook and other platforms.<br><br>
@@ -7301,14 +7401,119 @@ This will be the real last message from us. I won't be able to receive either of
 </div>
 
 
+<!-- NEW TODO 
+  fix the comment (probably dont need)
+-->
 
-<!--
+<!-- div class="pros-cons">
+  <h2 class="pc-title">Fix the comment</h2>
+	<div style="display: flex; justify-content: center">
+	comment
+  </div>
+		<br>
+	<h4 style="display: flex; justify-content: center">How can we make this comment sound better?</h4>
+	
+	<div style="display: flex; justify-content: center">
+		<div id="n-comment-bad">
+			<div style="background: #fff; border: 1px solid #000; padding: 20px">
+			  <br>
+			  <i><span style="color: #800"><strong>comment</strong></span> comment bad</i>
+			  <br>
+				<br>
+		  </div>
+			<div style="display: flex; justify-content: center; padding: 20px">
+			  <span style="font-size: 30px">❌ 👎</span>
+		  </div>
+	  </div>
+  </div>
+	
+	
+	<div style="display: flex; justify-content: center">
+		<div id="n-comment-good" style="display: none">
+			<div style="background: #fff; border: 1px solid #000; padding: 20px">
+			  <br>
+				comment good
+			  <br>
+				<br>
+		  </div>
+			<div style="display: flex; justify-content: center; padding: 20px">
+			  <span style="font-size: 30px">✅ 👍</span>
+				
+		  </div>
+	  </div>
+  </div>
+	
+	
+	<div style="display: flex; justify-content: center">
+	<button id="toggleResponseN_comment" style="color: #467"><b>FIX</b></button>
+  </div>
+    
+  
+</div -->
 
-TODO: message him
 
-show response on here
+<!-- NEW TODO 
+ hover: Is there anything wrong with this logic?	
+	
+-->
+
+<div class="pros-cons">
+  <h2 class="pc-title">Fix the Social Media Post</h2>
+	<div style="display: flex; justify-content: center">
+	This story involves <span class="tooltip-fancy">&nbsp; two entities &nbsp;<span class="tooltip-box">for example: 
+		<br> - two couples
+		<br> - two business partners</span></span> working together to reach a <span class="tooltip-fancy">&nbsp; common goal <span class="tooltip-box">for example:
+		<br> - testing an idea together
+		<br> - running a business together</span></span>.
+</div>
+	<h4 style="display: flex; justify-content: center">How can we make this Facebook post sound more reasonable?</h4>
+	
+	<div style="display: flex; justify-content: center">
+		<div id="n-fbpost-bad">
+			<div style="background: #fff; border: 1px solid #000; padding: 20px">
+			  <br>
+			  <i><span style="color: #800"><strong>Moving twice a year is</strong></span> such a fun thing to do thanks to the couple of the year</i> 😊🤯🤬
+			  <br>
+				<br>
+		  </div>
+			<div style="display: flex; justify-content: center; padding: 20px">
+			  <span style="font-size: 30px">❌ 👎</span>
+		  </div>
+	  </div>
+  </div>
+	
+	
+	<div style="display: flex; justify-content: center">
+		<div id="n-fbpost-good" style="display: none">
+			<div style="background: #fff; border: 1px solid #000; padding: 20px">
+			  <br>
+				New chapter of our lives<br>
+        <br>
+				With a little heavy heart, we have decided to discontinue our <span style="color: #080">plan to purchase a house together</span>. It’s shocking news to ourselves too as we didn’t anticipate that it would happen this soon after <span style="color: #080">only two months of living in a trial rental together</span> in 2021.<br>
+				<br>
+			  <span style="color: #080"><strong>Moving twice a year is </strong>something both of us couples needed to do.</span> Since the new addition <span style="color: #080">of information that we continued to gather throughout that summer, our housing plan kept being put to the test.</span> We both tried hard to keep <span style="color: #080">this idea</span> up and running to serve our needs. However, it came to the point where we couldn't continue <span style="color: #080">living together</span> in a sustainable way and the difference of priorities in our life stage couldn't be dismissed.
+			  <br>
+				<br>
+		  </div>
+			<div style="display: flex; justify-content: center; padding: 20px">
+			  <span style="font-size: 30px">✅ 👍</span>
+				
+		  </div>
+	  </div>
+  </div>
+	
+	
+	<div style="display: flex; justify-content: center">
+	<button id="toggleResponseN_fbpost" style="color: #467"><b>FIX</b></button>
+  </div>
+    
+  
+</div>
 
 
+
+<!-- NEW TODO
+message him, then show response on here
 (even if no response, can just show the amount of time that passed)
 
 -->
@@ -7370,7 +7575,8 @@ because <strong></i>both <span class="l">🅒</span> and <span class="n">🅞</s
 </div>
 
 
-<!-- 
+<!-- NEW TODO 
+
 Stress Levels
 
 four houses: fine before, moved in, stress increased, moved out, stress went away
@@ -7382,7 +7588,7 @@ four houses: fine before, moved in, stress increased, moved out, stress went awa
 -->
 
 
-<!-- 
+<!-- NEW TODO
 
 
 	<div class="image-overlay" id="damnedifyoudo">
@@ -7407,7 +7613,7 @@ four houses: fine before, moved in, stress increased, moved out, stress went awa
     What reasoning did <span class="l">🅒</span> provide for why <span class="e">🅟</span><span class="m">🅢</span> did not need to stay on the lease?
   </div>
 
-  <button class="option" data-option="A" data-explain="<span data-target='this_isnt_charity'>'This isn't charity, it's literally the law.'</span">As long as they all follow the rules, that's all that matters.</button>
+  <button class="option" data-option="A" data-explain="<span data-target='this_isnt_charity'>'This isn't charity, it's literally the law.'</span>">As long as they all follow the rules, that's all that matters.</button>
   <button class="option" data-option="B" data-hint="While this is true, that was not the reason he gave.">The landlord providing those students had already been accepted as a backup plan.</button>
 
   <div class="result"></div>
@@ -7419,7 +7625,7 @@ four houses: fine before, moved in, stress increased, moved out, stress went awa
   </div>
 
   <button class="option" data-option="A" >It wouldn't have helped them.</button>
-  <button class="option" data-option="B" data-explain="<span data-target='never_took_for_granted'>'We never took your help for granted.'</span">This help wasn't expected.</button>
+  <button class="option" data-option="B" data-explain="<span data-target='never_took_for_granted'>'We never took your help for granted.'</span>">This help wasn't expected.</button>
 
   <div class="result"></div>
 </div>
@@ -7906,7 +8112,7 @@ Two facts:
 Are these two things causally related? Did one of these events cause the other to happen?
 
 Did they stop pursuing co-ownership of a house because it would have ruined the friendship?
-Or did the friendship fail because that idea failed?
+Or did the friendship fail because the idea failed?
 
 
 -->
@@ -7934,7 +8140,7 @@ Why is the second one better?
 
 
 
-
+<!-- 
 <div style="height:400px"></div>
 
 
@@ -7947,6 +8153,8 @@ Where are they at now?
 </div>
 
 <img src="images/guide-to-buying-vs-renting.png" style="display: block; margin-left: auto; margin-right: auto; width: 90%">
+
+-->
 
 
 <script>
@@ -8037,12 +8245,45 @@ document.addEventListener("click", e => {
 	});
 </script>
 <script>
+	document.querySelectorAll(".tooltip-fancy").forEach(tip => {
+	    const box = tip.querySelector(".tooltip-box");
+
+	    tip.addEventListener("mouseenter", () => {
+	        if (!box) return;
+
+	        // Clear any previous adjustment
+	        box.style.transform = "";
+
+					const rect = box.getBoundingClientRect();
+					const padding = 10;
+					const viewportWidth = document.documentElement.clientWidth;
+
+					let shiftX = 0;
+
+					if (rect.left < padding) {
+					    shiftX = padding - rect.left;
+					} else if (rect.right > viewportWidth - padding) {
+					    shiftX = viewportWidth - padding - rect.right;
+					}
+
+					box.style.transform = `translateX(${shiftX}px)`;
+	    });
+
+	    tip.addEventListener("mouseleave", () => {
+	        if (!box) return;
+
+	        box.style.transform = "";
+	    });
+	});
 	
+	
+	/*
 	document.querySelectorAll(".tooltip-fancy").forEach(tip => {
 	  const box = tip.querySelector(".tooltip-box");
 
 	  tip.addEventListener("mouseenter", () => {
 			if (box) {
+				//console.log("A");
 		    const rect = box.getBoundingClientRect();
 		    const padding = 8;
 
@@ -8050,8 +8291,10 @@ document.addEventListener("click", e => {
 
 		    if (rect.left < padding) {
 		      shiftX = padding - rect.left;
+					//console.log("B");
 		    } else if (rect.right > window.innerWidth - padding) {
 		      shiftX = window.innerWidth - padding - rect.right;
+					//console.log("C");
 		    }
 
 		    box.style.transform = `translateX(${shiftX}px)`;
@@ -8209,6 +8452,109 @@ document.querySelectorAll(".hover-reveal").forEach(el => {
 		}
 		
 	});
+	
+	/*
+	//toggleResponseN_fbpost
+	const cButtonN = document.getElementById("toggleResponseN_comment");
+	cButtonN.addEventListener("click", () => {
+	  const cNbad = document.getElementById("n-comment-bad");
+		const cNgood = document.getElementById("n-comment-good");
+    cNbad.style.display = "none";
+		cNgood.style.display = "block";
+		cButtonN.style.display = "none";
+		
+		const target = document.getElementById("n-comment-good");
+    const rect = target.getBoundingClientRect();
+
+    // Center of the target, relative to the viewport
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+		
+    for (let i = 0; i < 40; i++) {
+
+      const sparkle = document.createElement("div");
+
+      sparkle.className = "magic-sparkle";
+			sparkle.textContent = "✦";
+
+			const hue = Math.random() * 360;
+			sparkle.style.color = `hsl(${hue}, 100%, 60%)`;
+
+      // Start at the center of the target
+      sparkle.style.left = `${centerX}px`;
+      sparkle.style.top = `${centerY}px`;
+
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 100 + Math.random() * 400;
+
+      sparkle.style.setProperty(
+          "--dx",
+          `${Math.cos(angle) * distance}px`
+      );
+
+      sparkle.style.setProperty(
+          "--dy",
+          `${Math.sin(angle) * distance}px`
+      );
+
+      document.body.appendChild(sparkle);
+
+      setTimeout(() => sparkle.remove(), 1200);
+    }
+		
+	});/**/
+	
+	//toggleResponseN_fbpost
+	const fbpostButtonN = document.getElementById("toggleResponseN_fbpost");
+	fbpostButtonN.addEventListener("click", () => {
+	  const fbpostNbad = document.getElementById("n-fbpost-bad");
+		const fbpostNgood = document.getElementById("n-fbpost-good");
+    fbpostNbad.style.display = "none";
+		fbpostNgood.style.display = "block";
+		fbpostButtonN.style.display = "none";
+		
+		const target = document.getElementById("n-fbpost-good");
+    const rect = target.getBoundingClientRect();
+
+    // Center of the target, relative to the viewport
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+		
+    for (let i = 0; i < 40; i++) {
+
+      const sparkle = document.createElement("div");
+
+      sparkle.className = "magic-sparkle";
+			sparkle.textContent = "✦";
+
+			const hue = Math.random() * 360;
+			sparkle.style.color = `hsl(${hue}, 100%, 60%)`;
+
+      // Start at the center of the target
+      sparkle.style.left = `${centerX}px`;
+      sparkle.style.top = `${centerY}px`;
+
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 100 + Math.random() * 400;
+
+      sparkle.style.setProperty(
+          "--dx",
+          `${Math.cos(angle) * distance}px`
+      );
+
+      sparkle.style.setProperty(
+          "--dy",
+          `${Math.sin(angle) * distance}px`
+      );
+
+      document.body.appendChild(sparkle);
+
+      setTimeout(() => sparkle.remove(), 1200);
+    }
+		
+	});
+	
+	
 	const responseButtonN = document.getElementById("toggleResponseN");
 	responseButtonN.addEventListener("click", () => { 
 	  const responseNbad = document.getElementById("n-response-bad");
